@@ -1,0 +1,128 @@
+Docker installation:
+
+sudo yum remove docker docker-client docker-client-latest docker-common docker-latest docker-latest-logrotate docker-logrotate docker-engine
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install -y docker-ce docker-ce-cli containerd.io
+sudo systemctl start docker
+sudo systemctl enable docker
+docker --version
+sudo docker run hello-world
+
+
+
+     sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+     sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+     sudo yum install -y docker-ce docker-ce-cli containerd.io
+     sudo systemctl start docker
+     sudo docker run hello-world
+     docker images
+     docker container run -d httpd
+     docker container ps
+     docker container exec -it recursing_chaum
+     docker container exec -it recursing_chaum pwd
+     docker container exec -it recursing_chum /bin/bash
+     docker container exec -it recursing_chaum /bin/bash
+     docker container kill recursing_chaum
+     docker container rm recursing_chaum
+     docker container run -d -p 80:80 httpd
+     docker ps
+     docker network ls
+     docker network inspect f3c8ec0587e9
+     docker network ls
+     docker ps
+     docker container exec -it infallible_varahamihira pwd
+    docker container exec -it infallible_varahamihira cat /usr/local/apache2/htdocs
+    docker container exec -it infallible_varahamihira cat /usr/local/apache2/htdocs/index.html
+     vi index.html
+    vi Dockerfile
+    dcoker image ls
+     docker image ls
+     docker build -t httpd:accenture-1.0 .
+     docker image ls
+    docker image history 807b69b79479
+    docker container run -d -p 81:80 httpd:accenture-1.0
+    docker ps
+   history
+    cat Dockerfile
+    docker image ls
+    cat index.html
+    docker ps
+    docker image ls
+    docker tag httpd:accenture-1.0 kulbhushanmayer/httpd:accenture-1.0
+    docker image ls
+    docker login
+    docker push kulbhushanmayer/httpd:accenture-1.0
+   history
+
+
+
+
+
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+
+kubeadm reset
+kubeadm init --apiserver-advertise-address=192.168.3.107 --pod-network-cidr=192.168.0.0/16  
+  148  mkdir -p $HOME/.kube
+  149  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  150  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  151  kubectl apply -f https://docs.projectcalico.org/v3.8/manifests/calico.yaml  /// kubernetes masters only
+  152  kubectl get nodes
+
+
+
+=======================================================================================
+Kubernetes deployment definition:
+
+
+
+69  cat pod-defination.yml
+  170  kubectl get pods
+  171  kubectl get pods --all-namespaces
+  172  kubectl apply -f pod-defination.yml
+  173  kubectl get pods
+  174  kubectl describe pod nginx
+  175  kubectl delete pod nginx
+  176  kubectl get pods
+  177  cat rs-defination.yml
+  178  kubectl get pods
+  179  kubectl apply -f rs-defination.yml
+  180  kubectl get pods
+  181  kubectl get pods -o wide
+  182  vi rs-defination.yml
+  183  kubectl apply -f rs-defination.yml
+  184  kubectl get pods -o wide
+  185  cat rs-defination.yml
+  186  cp rs-defination.yml deployment-defination.yml
+  187  vi deployment-defination.yml
+  188  kubectl apply -f deployment-defination.yml
+  189  kubectl get deploy nginx-deployment
+  190  kubectl describe deploy nginx-deployment
+  191  kubectl ddescribe rs nginx-deployment-7d8d5cfcf8
+  192  kubectl describe rs nginx-deployment-7d8d5cfcf8
+  193  kubectl describe pod nginx-deployment-7d8d5cfcf8-dlmm9
+  194  kubectl get pods
+  195  kubectl get pods -o wide
+  196  kubectl get pods
+  197  kubectl delete pod nginx-deployment-7d8d5cfcf8-wmcq4
+  198  kubectl get pods
+  199  kubectl get rs
+  200  kubectl delete rs nginx-deployment-7d8d5cfcf8
+  201  kubectl get rs
+  202  kubectl delete rs nginx-rs
+  203  kubectl get rs
+  204  cat deployment-defination.yml
+  205  kubectl get rs
+  206  kubectl describe rs nginx-deployment-7d8d5cfcf8
+  207  ping 192.168.3.94
+  208  kubeadm token create --print-join-command
+  209  history
+
+============================================================================
+
+Storage points 
+
+https://kubernetes.io/docs/concepts/storage/
+
+
+

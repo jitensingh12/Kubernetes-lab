@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+  labels:
+      app: myapp
+      type: backend-end
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:   # Update Pods a certain number at a time.
+       maxUnavailable: 1
+  template:
+      metadata:
+         name: myapp-pod
+         labels: 
+             app: myapp
+             type: backend-end
+      spec:
+        containers:
+        - name: nginx-containers
+          image: jtsingh12/jitendrawq:accen-1.0
+  replicas: 5
+  selector:
+     matchLabels:
+        type: backend-end
