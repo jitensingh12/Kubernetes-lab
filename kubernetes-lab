@@ -125,4 +125,42 @@ Storage points
 https://kubernetes.io/docs/concepts/storage/
 
 
+=============================================================================
 
+Rolling strategy Kubernetes.
+
+
+kubectl rollout history deploy myapp-deployment
+  453  kubectl describe pod myapp-deployment-69d696d9cd-8pm56
+  454  kubectl rollout undo deploy myapp-deployment
+  455  kubectl get pods
+  456  kubectl describe pods myapp-deployment-7647d9d574-68jnk
+  457  kubectl rollout history deploy myapp-deployment
+  458  #kubectl rollout status
+  459  kubectl get deploy
+  460  kubectl rollout status myapp-deployment
+
+
+
+
+
+=============================================================================
+#######Cretate service and deploy port #########
+
+kubectl get svc
+  479  kubectl describe svc demo
+  480  kubectl create deploy httpd --image=kulbhushanmayer/httpd:accenture-1.0
+  481  kubectl get deploy
+  482  kubectl get pods
+  483  kubectl describe pod httpd-566d78b947-v9qjq
+  484  kubectl delete deploy httpd
+  485  kubectl create deploy httpd --image=kulbhushanmayer/httpd:accenture-1.0
+  486  kubectl get pods
+  487  kubectl get deploy
+  488  kubectl get svc
+  489  kubectl expose deployment httpd --port 81 --target-port 80 --type NodePort
+  490  kubectl get svc
+  491  kubectl get pods -o wide
+  492  ll
+  493  cat expose-service.yml
+  494  vi expose-service.yml

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment-custom
+  labels:
+      app: myapp
+      type: backend-end
+spec:
+  template:
+      metadata:
+         name: myapp-pod
+         labels: 
+             app: myapp
+             type: backend-end
+      spec:
+        containers:
+        - name: nginx-containers
+          image: jtsingh12/jitendrawq:accen-1.0
+#          ports:
+#          - containerPort: 80 
+  replicas: 1
+  selector:
+     matchLabels:
+        type: backend-end
